@@ -1,5 +1,5 @@
 # Contact-App
-The Contacts application can save names, phone numbers, e-mails and addresses. 
+The Contacts App can save names, phone numbers, e-mails and addresses. 
 In Contact App we can add contact, view details and delete contacts. 
 The Contacts App is created using Node.js, the contact data is stored in the contacts.json file.
 
