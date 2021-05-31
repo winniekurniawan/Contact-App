@@ -48,12 +48,23 @@ const cekDuplikat = (nama) => {
 };
 
 // hapus contact
-const hapusContact = (nama) => {
-  let contacts = loadContacts();
-  contacts = contacts.filter(
+const deleteContact = (nama) => {
+  const contacts = loadContacts();
+  const filteredContacts = contacts.filter(
     (contact) => contact.nama.toLowerCase() !== nama.toLowerCase()
   );
-  saveContacts(contacts);
+  saveContacts(filteredContacts);
+};
+
+// mengubah contact
+const updateContacts = (newContact) => {
+  const contacts = loadContacts();
+  const filteredContacts = contacts.filter(
+    (contact) => contact.nama.toLowerCase() !== newContact.oldNama.toLowerCase()
+  );
+  delete newContact.oldNama;
+  filteredContacts.push(newContact);
+  saveContacts(filteredContacts);
 };
 
 module.exports = {
@@ -61,5 +72,6 @@ module.exports = {
   findContact,
   addContact,
   cekDuplikat,
-  hapusContact,
+  deleteContact,
+  updateContacts,
 };
